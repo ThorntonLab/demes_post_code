@@ -1,0 +1,21 @@
+description: simple population split
+time_units: generations
+demes:
+  - name: ancestor
+    epochs:
+      - start_size: 1000
+        end_time: 100
+  - name: derived1
+    ancestors: [ancestor]
+    epochs:
+      - start_size: 250
+        end_size: 1500
+  - name: derived2
+    ancestors: [ancestor]
+    epochs:
+      - start_size: 500
+        end_size: 800
+migrations:
+  - demes: [derived1, derived2]
+    rate: 1e-5
+    start_time: 50
